@@ -29,7 +29,7 @@
 <body class="bg-[#D1FAE5]">
 
 
-    <div id="notcreated" class="h-screen flex flex-col gap-12 justify-center  items-center min-h-screen ">
+    <div class="h-screen flex flex-col gap-12 justify-center  items-center min-h-screen ">
         <div class="flex gap-3">
             <svg width="26" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -42,14 +42,15 @@
                 Tasks</button>
         </div>
 
-        <div class=" h-80 w-2/5 bg-[#FEFEFE] rounded-lg shadow-xl">
+        <div class="h-96 w-2/5 bg-[#FEFEFE] rounded-lg shadow-xl">
             <div class="h-20  bg-[#F8FAFC] justify-center items-center border-0 ">
                 <div class="flex justify-between p-5">
                     <div>
-                        <input type="text" id="input" class="h-10 border-0" placeholder="Type task name here....">
+                        <input type="text" id="input" class="h-10 border-0 outline-0 bg-transparent "
+                            placeholder="Type task name here....">
                     </div>
                     <div>
-                        <button type="button"
+                        <button id="notcreated" type="button"
                             class=" flex flex-row justify-center items-center h-10 w-28 bg-[#D1FAE5] text-white rounded">
 
                             <svg width="19" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,52 +60,8 @@
                             </svg>
 
                             Create</button>
-                    </div>
-                </div>
-
-                <h1 class="m-5 font-medium font-outfit text-base leadin-5">Tasks</h1>
-                <ul class="m-5 text-[#334155] font-outfit font-medium text-xl leading-6">
-                    <li class="m-8" id="list3">
-                        <input type="checkbox" id="checkbox3" class=""><label for="checkbox3"> Become a great developer
-                        </label>
-                    </li>
-                    <li class="m-8" id="list4">
-                        <input type="checkbox" id="checkbox4" class=""><label for="checkbox4">
-                            Become a good UI developer
-                        </label>
-                    </li>
-                </ul>
-
-
-            </div>
-
-        </div>
-    </div>
-
-
-    //
-    <div id="create" class=" hidden h-screen flex flex-col gap-12 justify-center  items-center min-h-screen ">
-        <div class="flex gap-3">
-            <svg width="26" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M15.341.883A1.8 1.8 0 0 1 16.6 2.6v9h7.2a1.8 1.8 0 0 1 1.475 2.832l-12.6 18A1.8 1.8 0 0 1 9.4 31.4v-9H2.2a1.8 1.8 0 0 1-1.475-2.832l12.6-18a1.8 1.8 0 0 1 2.016-.685Z"
-                    fill="#10B981" />
-            </svg>
-
-            <button type="button"
-                class="  flex items-center justify-center font-outfit font-bold text-3xl text-[#000000] leading-8">My
-                Tasks</button>
-        </div>
-
-        <div class=" h-80 w-2/5 bg-[#FEFEFE] rounded-lg shadow-xl">
-            <div class="h-20  bg-[#F8FAFC] justify-center items-center border-0 ">
-                <div class="flex justify-between p-5">
-                    <div>
-                        <input type="text" class="h-10 border-0" placeholder="Type task name here....">
-                    </div>
-                    <div>
-                        <button type="button"
-                            class=" flex flex-row justify-center items-center h-10 w-28 bg-[#059669] text-white rounded">
+                        <button id="create" type="button"
+                            class=" hidden flex flex-row justify-center items-center h-10 w-28 bg-[#059669] text-white rounded">
 
                             <svg width="19" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -117,23 +74,69 @@
                 </div>
 
                 <h1 class="m-5 font-medium font-outfit text-base leadin-5">Tasks</h1>
+
+
+
+
+
+
                 <ul class="m-5 text-[#334155] font-outfit font-medium text-xl leading-6">
-                    <li class="m-8" id="list1">
-                        <input type="checkbox" id="checkbox1" class=""><label for="checkbox1"> Become a great developer
-                        </label>
+                    <li class="my-8 flex" id="list1">
+
+                        <svg id="untick" class="mr-4" width="24" height="24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x=".5" y=".5" width="23" height="23" rx="11.5" fill="#FEFEFE" />
+                            <rect x=".5" y=".5" width="23" height="23" rx="11.5" stroke="#E2E8F0" />
+                        </svg>
+                        <svg id="tick" class="hidden mr-4" width="24" height="24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect width="24" height="24" rx="12" fill="#10B981" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.366 8.234a.8.8 0 0 1 0 1.132l-6.4 6.4a.8.8 0 0 1-1.132 0l-3.2-3.2a.8.8 0 0 1 1.132-1.132L10.4 14.07l5.834-5.835a.8.8 0 0 1 1.132 0Z"
+                                fill="#FEFEFE" />
+                        </svg>
+                        <p> Become a great developer</p>
+
                     </li>
-                    <li class="m-8" id="list2">
-                        <input type="checkbox" id="checkbox2" class=""><label for="checkbox2">
-                            Become a good UI developer
-                        </label>
+                    <li class="my-8 flex" id="list2">
+
+
+                        <svg id="untick1" class="mr-4 hidden" width="24" height="24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x=".5" y=".5" width="23" height="23" rx="11.5" fill="#FEFEFE" />
+                            <rect x=".5" y=".5" width="23" height="23" rx="11.5" stroke="#E2E8F0" />
+                        </svg>
+                        <svg id="tick1" class=" mr-4" width="24" height="24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect width="24" height="24" rx="12" fill="#10B981" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.366 8.234a.8.8 0 0 1 0 1.132l-6.4 6.4a.8.8 0 0 1-1.132 0l-3.2-3.2a.8.8 0 0 1 1.132-1.132L10.4 14.07l5.834-5.835a.8.8 0 0 1 1.132 0Z"
+                                fill="#FEFEFE" />
+                        </svg>
+                        <p> Become a good UI developer</p>
+
                     </li>
                 </ul>
+
+
+                <div id="newlist" class="flex ">
+
+                </div>
+
 
 
             </div>
 
         </div>
     </div>
+
+
+
+
+
+
+
+
 
 
 
