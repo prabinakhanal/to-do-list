@@ -52,12 +52,23 @@ Input.addEventListener('click', () => {
 })
 
 
-
-
 Create.addEventListener('click', () => {
+
+    const paragraph = document.createElement('p');
+    paragraph.innerText = Input.value;
+    //newlist.appendChild(paragraph);
+    Input.value = '';
+    paragraph.style.fontFamily = "outfit";
+    paragraph.style.fontSize = "24px";
+    paragraph.style.fontStyle = "normal";
+    paragraph.style.fontWeight = "500";
+    paragraph.style.lineHeight = "24px";
+    paragraph.style.color="#334155";
+    paragraph.style.marginLeft = "12px";
+
     const image = document.createElement('img');
     image.src = "/images/untick.svg"
-    newlist.appendChild(image);
+    //newlist.appendChild(image);
     image.style.marginRight = "4px";
     image.style.marginLeft = "20px";
     image.addEventListener('click', () => {
@@ -65,8 +76,7 @@ Create.addEventListener('click', () => {
         newlist.style.textDecoration = "line-through";
         newlist.style.color = "#94A3B8";
         newlist.paragraph.style.color="#94A3B8";
-    
-
+        newlist.style.display="flex";
     })
 
     image.addEventListener('dblclick', () => {
@@ -76,35 +86,17 @@ Create.addEventListener('click', () => {
 
     })
 
-})
-
-
-
-
-Create.addEventListener('click', () => {
-    const paragraph = document.createElement('p');
-    paragraph.innerText = Input.value;
-    newlist.appendChild(paragraph);
-    Input.value = '';
-    paragraph.style.fontFamily = "outfit";
-    paragraph.style.fontSize = "23px";
-    paragraph.style.fontStyle = "normal";
-    paragraph.style.fontWeight = "500";
-    paragraph.style.lineHeight = "24px";
-    paragraph.style.color="#334155";
-    paragraph.style.marginLeft = "12px"
-
-
-    //paragraph.classList.add('m-5, text-[#334155], font-outfit,font-medium ,text-xl, leading-6');
-    // paragraph.addEventListener('click',()=>{
-    //     paragraph.style.textDecoration="line-through";
-    // })
-
-    // paragraph.addEventListener('dblclick',()=>{
-    //     newlist.removeChild(paragraph);
-    // })
+const div=document.createElement('div');
+div.style.display="flex";
+div.style.marginBottom="25px";
+div.appendChild(image);
+div.appendChild(paragraph);
+newlist.appendChild(div);
 
 })
+
+
+
 
 
 
