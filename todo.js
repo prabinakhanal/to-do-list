@@ -9,6 +9,7 @@ tick = document.getElementById('tick');
 tick1 = document.getElementById('tick1');
 untick = document.getElementById('untick');
 untick1 = document.getElementById('untick1');
+outside=document.getElementById('outside');
 
 
 List1.addEventListener("click", () => {
@@ -46,14 +47,27 @@ List2.addEventListener("dblclick", () => {
 })
 
 
-Input.addEventListener('click', () => {
-    Create.classList.remove('hidden')
-    notCreated.classList.add('hidden')
+Input.addEventListener('click', (e) => {
+    e.stopPropagation();
+    Create.classList.add('bg-emerald-600');
+    Create.classList.remove('bg-emerald-100');
+    Create.classList.remove('disabled')
+    
+})
+
+
+outside.addEventListener('click', () => {
+    Create.classList.remove('bg-emerald-600');
+    Create.classList.add('bg-emerald-100');
+    Create.classList.add('disabled')
 })
 
 
 Create.addEventListener('click', () => {
-
+if (Input.value===""){
+    alert('input is required');
+}
+else{
     const paragraph = document.createElement('p');
     paragraph.innerText = Input.value;
     //newlist.appendChild(paragraph);
@@ -76,7 +90,7 @@ Create.addEventListener('click', () => {
         newlist.style.textDecoration = "line-through";
         newlist.style.color = "#94A3B8";
         newlist.paragraph.style.color="#94A3B8";
-        newlist.style.display="flex";
+        
     })
 
     image.addEventListener('dblclick', () => {
@@ -93,6 +107,7 @@ div.appendChild(image);
 div.appendChild(paragraph);
 newlist.appendChild(div);
 
+}
 })
 
 
